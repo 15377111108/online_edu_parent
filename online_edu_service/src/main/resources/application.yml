@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: EDU-SERVICE
+  datasource:
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/online_edu?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true
+#    jdbc:mysql://127.0.0.1:3306/online_edu?autoReconnect=true&useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8
+#    jdbc:mysql://127:
+#      0:
+#        0:
+#          1:3306/online_edu?serverTimezone=GMT%2B8&useSSL=false&useUnicode=true&characterEncoding=UTF-8:
+
+    driver-class-name: com.mysql.jdbc.Driver
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://localhost:8888/eureka/
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 47.97.200.47
+  instance:
+    appname: EDU-SERVICE
+    prefer-ip-address: true
+server:
+  port: 8000
+swagger2:
+  enable: true
+mybatis-plus:
+  mapper-locations: classpath:com/atguigu/mapper/xml/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
